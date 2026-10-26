@@ -1,424 +1,432 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b1115">
-<meta name="description" content="APEX Auto Care — careful diagnostics, skilled repairs and automotive maintenance.">
-<title>APEX AUTO CARE — Precision in Every Detail</title>
+<meta name="description" content="APEX Auto Care — thoughtful automotive service, precision diagnostics and care for the road ahead.">
+<title>APEX AUTO CARE — Care for the drive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b1115;--panel:#131e24;--blue:#345bff;--ice:#a8b8ff;--cream:#f0eee6;--muted:#aab4b7;--line:rgba(255,255,255,.15);--ease:cubic-bezier(.2,.75,.25,1)}
+:root{--ink:#0b1115;--panel:#121c22;--blue:#2c5cff;--blue2:#9eb3ff;--cream:#f0eee6;--muted:#a8b1b5;--line:rgba(255,255,255,.16);--ease:cubic-bezier(.2,.75,.25,1)}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;background:var(--bg);color:#f5f5f1;font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--ink);color:#f6f5f0;font-family:"DM Sans",sans-serif;line-height:1.55;overflow-x:hidden}
+body,button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{display:block;width:100%;height:100%;object-fit:cover}
+button,input,textarea,select{font:inherit}
+button{color:inherit}
+img{display:block;max-width:100%}
 ::selection{background:var(--blue);color:white}
-:focus-visible{outline:2px solid var(--ice);outline-offset:5px}
-.wrap{width:min(1280px,calc(100% - 9vw));margin:auto}
-h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.06em;margin-top:0}
-h2{font-size:clamp(40px,6vw,76px);line-height:1.02;font-weight:600}
-h2 em,h1 em{font-style:normal;color:var(--ice)}
-p{color:#b6c0c3}
-.eyebrow{display:flex;align-items:center;gap:11px;font-size:10px;letter-spacing:.19em;font-weight:700;text-transform:uppercase}
-.eyebrow:before{content:"";width:26px;height:1px;background:var(--ice)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:17px;min-height:51px;padding:0 20px;background:var(--blue);color:white;border:1px solid var(--blue);font-size:12px;font-weight:700;transition:transform .3s var(--ease),background .3s}
-.btn:hover{background:#4d6eff;transform:translateY(-3px)}
+:focus-visible{outline:2px solid #afc0ff;outline-offset:4px}
+.wrap{width:min(1280px,calc(100% - 9vw));margin-inline:auto}
+.eyebrow,.kicker{font-size:10px;line-height:1.4;font-weight:700;letter-spacing:.19em;text-transform:uppercase;display:flex;align-items:center;gap:11px}
+.eyebrow:before,.kicker:before{content:"";display:inline-block;width:25px;height:1px;background:var(--blue2)}
+h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.065em;margin-top:0}
+h2{font-size:clamp(40px,6vw,78px);line-height:.99;font-weight:600;margin-bottom:24px}
+h2 em,h1 em{font-style:normal;color:var(--blue2)}
+p{color:#b5bec2}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:0 21px;background:var(--blue);border:1px solid var(--blue);font-size:12px;font-weight:700;color:white;transition:transform .3s var(--ease),background .3s,border-color .3s;cursor:pointer}
+.btn:hover{transform:translateY(-3px);background:#426dff;border-color:#426dff}
 .btn .arrow{font-size:17px;transition:transform .3s}
 .btn:hover .arrow{transform:translate(3px,-3px)}
-.btn-outline{background:transparent;border-color:rgba(255,255,255,.4)}
-.btn-outline:hover{background:white;color:var(--bg)}
-header{position:absolute;z-index:30;top:0;left:0;width:100%;height:79px;border-bottom:1px solid var(--line)}
+.btn-outline{background:transparent;border-color:rgba(255,255,255,.42)}
+.btn-outline:hover{background:#fff;color:var(--ink);border-color:#fff}
+.topbar{height:80px;position:absolute;z-index:30;top:0;left:0;width:100%;border-bottom:1px solid var(--line)}
 .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;font-family:Manrope,sans-serif;font-weight:800;font-size:13px;letter-spacing:.13em;white-space:nowrap}
-.brand-symbol{width:32px;height:32px;display:grid;place-items:center;border:1px solid #92a5ff;color:#a8b8ff;transform:rotate(45deg)}
-.brand-symbol span{transform:rotate(-45deg)}
-.navlinks{display:flex;gap:clamp(16px,3vw,38px);align-items:center;font-size:11px;color:#e0e5e4}
-.navlinks a:not(.btn){position:relative;padding:10px 0}
-.navlinks a:not(.btn):after{content:"";position:absolute;bottom:3px;left:0;width:0;height:1px;background:var(--ice);transition:width .25s}
-.navlinks a:not(.btn):hover:after{width:100%}
-.nav .btn{min-height:43px;padding:0 14px}
-.menu-toggle{display:none;color:white;background:transparent;border:1px solid var(--line);padding:9px 12px}
+.brand{display:flex;align-items:center;gap:12px;font-family:Manrope,sans-serif;font-size:13px;font-weight:800;letter-spacing:.13em;white-space:nowrap}
+.brand-mark{height:34px;width:34px;border:1px solid #829aff;color:#9fb2ff;display:grid;place-items:center;transform:rotate(45deg);font-size:15px}
+.brand-mark span{transform:rotate(-45deg)}
+.navlinks{display:flex;align-items:center;gap:clamp(17px,3vw,40px);font-size:11px;color:#e0e4e3}
+.navlinks a{position:relative;padding:9px 0}
+.navlinks a:not(.btn):after{content:"";position:absolute;bottom:3px;left:0;width:0;height:1px;background:#9eb3ff;transition:width .25s}
+.navlinks a:hover:after{width:100%}
+.nav .btn{min-height:44px;padding:0 15px}
+.menu-toggle{display:none;background:transparent;border:1px solid var(--line);padding:9px 12px}
 
-/* PINNED CINEMATIC HERO */
-.story{height:340vh;position:relative;background:#10191e}
-.sticky-scene{height:100svh;min-height:600px;position:sticky;top:0;overflow:hidden;isolation:isolate;background:#142027}
-.scene-photo{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:center 52%;transform:scale(var(--scale,1));opacity:var(--opacity,1);will-change:transform,opacity}
-.scene-car{--scale:1.04;--opacity:1}
-.scene-work{--scale:1.15;--opacity:0}
-.scene-detail{--scale:1.15;--opacity:0}
-.scene-doors{position:absolute;z-index:2;inset:-2%;perspective:1400px;pointer-events:none;opacity:var(--doors-opacity,0)}
-.door{position:absolute;top:0;height:106%;width:50%;background-image:url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=85");background-size:200% 100%;background-repeat:no-repeat;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);will-change:transform}
-.door.left{left:0;background-position:left center;transform-origin:left center}
-.door.right{right:0;background-position:right center;transform-origin:right center}
-.scene-shade{position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,10,13,.84),rgba(5,10,13,.45) 43%,rgba(5,10,13,.08) 82%),linear-gradient(0deg,rgba(5,10,13,.8),transparent 45%,rgba(5,10,13,.18))}
-.hero-copy{position:absolute;z-index:5;left:4.5%;top:46%;transform:translateY(-40%);max-width:min(680px,70vw);opacity:var(--intro,1);will-change:transform,opacity}
-.hero-copy .eyebrow{margin-bottom:24px}
-.hero-copy h1{font-size:clamp(58px,9.5vw,128px);line-height:.86;font-weight:800;letter-spacing:-.08em;margin:0 0 25px}
-.hero-copy h1 em{color:#a8b8ff}
-.hero-copy p{max-width:410px;font-size:14px;line-height:1.9;color:#d2d9d8;margin-bottom:28px}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
-.hero-meta{position:absolute;z-index:5;right:4.5%;top:43%;text-align:right;opacity:var(--meta,1)}
-.hero-meta strong{display:block;font-size:13px;font-family:Manrope,sans-serif}
-.hero-meta span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#c3cccd}
-.hero-guide{position:absolute;z-index:5;left:4.5%;bottom:48px;display:flex;align-items:center;gap:11px;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-.guide-line{width:30px;height:1px;background:var(--ice);animation:pulse 1.8s infinite}
-.hero-count{position:absolute;z-index:5;right:4.5%;bottom:48px;font-size:9px;letter-spacing:.15em}
-.story-progress{height:2px;position:absolute;z-index:12;bottom:0;left:0;right:0;background:rgba(255,255,255,.15)}
-.story-progress span{display:block;height:100%;background:#9eb1ff;transform:scaleX(0);transform-origin:left}
-.scene-caption{position:absolute;z-index:6;left:4.5%;top:53%;max-width:350px;opacity:0;transform:translateY(20px);pointer-events:none}
-.scene-caption small{font-size:9px;letter-spacing:.18em;color:#aabaff;text-transform:uppercase}
-.scene-caption strong{display:block;font-family:Manrope,sans-serif;font-size:clamp(27px,4vw,46px);line-height:1.04;letter-spacing:-.055em;margin-top:10px}
-.scene-caption p{font-size:12px;line-height:1.75;max-width:310px}
-.hotspots{position:absolute;z-index:8;inset:0;opacity:0;pointer-events:none}
-.hotspots.active{pointer-events:auto}
-.hotspot{position:absolute;display:flex;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:white;cursor:pointer;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s var(--ease)}
-.hotspots.active .hotspot{opacity:1;transform:translateY(0)}
-.hotspot:nth-child(2){transition-delay:.04s}.hotspot:nth-child(3){transition-delay:.08s}.hotspot:nth-child(4){transition-delay:.12s}.hotspot:nth-child(5){transition-delay:.16s}
-.hotspot-dot{width:35px;height:35px;border:1px solid #b1c0ff;border-radius:50%;display:grid;place-items:center;background:rgba(15,29,54,.8);font-size:10px;box-shadow:0 0 0 5px rgba(70,103,255,.16);transition:background .25s,transform .25s}
-.hotspot:hover .hotspot-dot,.hotspot[aria-pressed=true] .hotspot-dot{background:var(--blue);transform:scale(1.08)}
+/* Long, pinned story: normal browser scroll drives every scene transition. */
+.story-scroll{height:340vh;position:relative;background:#0b1115}
+.story-sticky{height:100svh;min-height:630px;position:sticky;top:0;overflow:hidden;isolation:isolate;background:#121b20}
+.scene-layer{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:center 53%;will-change:transform,opacity;transform:scale(var(--scene-scale,1));opacity:var(--scene-opacity,1)}
+.scene-car{--scene-scale:1.04;--scene-opacity:1;object-position:center 54%}
+.scene-cabin{--scene-scale:1.18;--scene-opacity:0;object-position:center 57%}
+.scene-engine{--scene-scale:1.18;--scene-opacity:0;object-position:center 55%}
+.scene-doors{position:absolute;inset:-3%;z-index:1;perspective:1500px;pointer-events:none}
+.door-panel{position:absolute;top:0;width:50%;height:106%;background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/1967_Ford_Mustang_GTA_Fastback_%2815574283606%29.jpg?width=2200');background-size:200% 100%;background-repeat:no-repeat;backface-visibility:hidden;will-change:transform;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 12px 35px rgba(0,0,0,.12)}
+.door-panel.left{left:0;background-position:left center;transform-origin:left center;border-right:1px solid rgba(255,255,255,.35)}
+.door-panel.right{right:0;background-position:right center;transform-origin:right center;border-left:1px solid rgba(255,255,255,.35)}
+.scene-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(5,10,13,.82) 0%,rgba(5,10,13,.48) 37%,rgba(5,10,13,.07) 79%),linear-gradient(0deg,rgba(5,10,13,.78),transparent 42%,rgba(5,10,13,.22))}
+.scene-grain{position:absolute;inset:0;z-index:3;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E")}
+.story-copy{position:absolute;z-index:5;left:4.5%;top:48%;transform:translateY(-42%);max-width:min(650px,62vw);opacity:var(--intro-opacity,1);will-change:transform,opacity}
+.story-copy .eyebrow{margin-bottom:24px}
+.story-copy h1{font-size:clamp(56px,9vw,126px);line-height:.86;font-weight:700;margin:0 0 26px;letter-spacing:-.078em}
+.story-copy h1 em{color:#9eb3ff}
+.story-copy p{max-width:425px;font-size:14px;line-height:1.85;margin:0 0 29px;color:#d1d7d6}
+.story-actions{display:flex;gap:10px;flex-wrap:wrap}
+.story-meta{position:absolute;z-index:5;right:4.5%;top:44%;text-align:right;opacity:var(--meta-opacity,1);transition:opacity .15s}
+.story-meta strong{display:block;font-family:Manrope,sans-serif;font-size:13px;letter-spacing:.02em}
+.story-meta span{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:#c0c9c8}
+.story-guide{position:absolute;z-index:5;left:4.5%;bottom:52px;display:flex;align-items:center;gap:12px;font-size:9px;text-transform:uppercase;letter-spacing:.17em;color:#e5e9e7}
+.guide-line{width:34px;height:1px;background:#9fb2ff;animation:guidePulse 1.8s ease-in-out infinite}
+.story-count{position:absolute;z-index:5;right:4.5%;bottom:52px;font-size:9px;letter-spacing:.14em;color:#e5e9e7}
+.story-meter{height:2px;position:absolute;z-index:10;left:0;right:0;bottom:0;background:rgba(255,255,255,.15)}
+.story-meter span{display:block;height:100%;width:100%;background:#8da5ff;transform:scaleX(0);transform-origin:left}
+.scene-caption{position:absolute;z-index:6;left:4.5%;top:53%;opacity:0;transform:translateY(25px);pointer-events:none;max-width:360px}
+.scene-caption .small{font-size:9px;letter-spacing:.18em;color:#a9bbff;text-transform:uppercase}
+.scene-caption strong{font-family:Manrope,sans-serif;display:block;font-size:clamp(27px,4vw,48px);line-height:1.03;letter-spacing:-.055em;font-weight:600;margin-top:12px}
+.scene-caption p{font-size:12px;line-height:1.7;margin-top:11px;max-width:300px}
+.hotspots{position:absolute;inset:0;z-index:8;opacity:0;pointer-events:none;transition:opacity .25s}
+.hotspots.is-active{pointer-events:auto}
+.hotspot{position:absolute;display:flex;align-items:center;gap:10px;border:0;background:none;padding:0;text-align:left;cursor:pointer;transform:translateY(12px);opacity:0;transition:opacity .35s,transform .35s var(--ease)}
+.hotspots.is-active .hotspot{opacity:1;transform:translateY(0)}
+.hotspots.is-active .hotspot:nth-child(2){transition-delay:.05s}
+.hotspots.is-active .hotspot:nth-child(3){transition-delay:.1s}
+.hotspots.is-active .hotspot:nth-child(4){transition-delay:.15s}
+.hotspots.is-active .hotspot:nth-child(5){transition-delay:.2s}
+.hotspots.is-active .hotspot:nth-child(6){transition-delay:.25s}
+.hotspot-dot{width:34px;height:34px;border-radius:50%;border:1px solid #a9bcff;background:rgba(15,29,54,.65);display:grid;place-items:center;color:white;font-size:10px;box-shadow:0 0 0 5px rgba(69,103,255,.13);transition:background .25s,transform .25s}
+.hotspot:hover .hotspot-dot,.hotspot[aria-pressed="true"] .hotspot-dot{background:var(--blue);transform:scale(1.08)}
 .hotspot-label{font-size:10px;font-weight:700;text-shadow:0 2px 9px #000;white-space:nowrap}
-.hotspot.h1{left:26%;top:48%}.hotspot.h2{left:45%;top:66%}.hotspot.h3{left:63%;top:50%}.hotspot.h4{left:72%;top:69%}.hotspot.h5{left:51%;top:34%}
-.hotspot-panel{position:absolute;z-index:9;right:4.5%;bottom:14%;width:min(310px,30vw);padding:19px 20px;background:rgba(7,14,18,.88);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(10px);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
-.hotspot-panel.visible{opacity:1;transform:translateY(0)}
-.hotspot-panel small{color:var(--ice);font-size:9px;letter-spacing:.15em}
-.hotspot-panel h3{font-size:22px;margin:8px 0}
-.hotspot-panel p{font-size:11px;line-height:1.7;margin:0}
-.story-end{position:absolute;z-index:6;left:50%;bottom:18%;width:90%;transform:translate(-50%,20px);text-align:center;opacity:0;pointer-events:none}
-.story-end small{font-size:9px;letter-spacing:.19em;text-transform:uppercase}
-.story-end strong{display:block;margin-top:10px;font-family:Manrope,sans-serif;font-size:clamp(34px,5.8vw,75px);line-height:1;letter-spacing:-.06em}
-@keyframes pulse{0%,100%{opacity:.35;transform:scaleX(.7);transform-origin:left}50%{opacity:1;transform:scaleX(1);transform-origin:left}}
+.hotspot.h1{left:43%;top:47%}
+.hotspot.h2{left:25%;top:67%}
+.hotspot.h3{left:61%;top:68%}
+.hotspot.h4{left:73%;top:51%}
+.hotspot.h5{left:53%;top:36%}
+.hotspot-panel{position:absolute;z-index:9;right:4.5%;bottom:15%;width:min(320px,30vw);padding:21px 22px;border:1px solid rgba(255,255,255,.24);background:rgba(7,14,18,.83);backdrop-filter:blur(12px);opacity:0;transform:translateY(15px);pointer-events:none;transition:opacity .25s,transform .25s}
+.hotspot-panel.is-visible{opacity:1;transform:translateY(0)}
+.hotspot-panel .panel-kicker{font-size:9px;color:#9eb3ff;letter-spacing:.15em;text-transform:uppercase}
+.hotspot-panel h3{font-size:22px;font-weight:600;letter-spacing:-.04em;margin:9px 0}
+.hotspot-panel p{font-size:11px;line-height:1.75;margin:0;color:#c1c9c9}
+.story-end-label{position:absolute;z-index:5;bottom:18%;left:50%;transform:translate(-50%,20px);text-align:center;opacity:0;width:90%;pointer-events:none}
+.story-end-label span{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#c3cccd}
+.story-end-label strong{display:block;font-family:Manrope,sans-serif;font-size:clamp(32px,5.4vw,70px);line-height:.98;letter-spacing:-.07em;margin-top:14px}
+.story-end-label em{font-style:normal;color:#9eb3ff}
+@keyframes guidePulse{0%,100%{opacity:.45;transform:scaleX(.75);transform-origin:left}50%{opacity:1;transform:scaleX(1)}}
 
-/* REAL GARAGE / WORKSHOP CONTENT */
-.ticker{background:var(--cream);color:#10191c;display:flex;justify-content:space-around;gap:20px;align-items:center;padding:20px 4.5%;flex-wrap:wrap}
-.ticker span{font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:700}
-.ticker b{color:var(--blue);padding-right:8px}
-.section{padding:110px 0}
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:48px}
-.section-head h2{max-width:650px;margin:15px 0 0}
-.section-head>p{max-width:360px;font-size:13px;line-height:1.9;margin-bottom:5px}
-.workshop-intro{background:var(--cream);color:var(--bg)}
-.workshop-intro .eyebrow{color:#353e40}
-.workshop-intro .eyebrow:before{background:var(--blue)}
-.workshop-intro h2{color:var(--bg)}
-.workshop-intro .section-head>p{color:#5f6969}
-.workshop-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:stretch}
-.workshop-feature{min-height:470px;position:relative;overflow:hidden;background:#1a2529}
-.workshop-feature img{position:absolute;inset:0;transition:transform .8s var(--ease)}
-.workshop-feature:hover img{transform:scale(1.045)}
-.workshop-feature:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 58%)}
-.image-copy{position:absolute;z-index:2;left:25px;right:25px;bottom:24px}
-.image-copy small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#c9d3ff}
-.image-copy h3{font-size:clamp(24px,3vw,37px);margin:7px 0}
-.image-copy p{font-size:12px;line-height:1.7;max-width:360px;margin:0;color:#e0e5e2}
-.workshop-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
-.workshop-small{position:relative;min-height:225px;overflow:hidden;background:#1a2529}
-.workshop-small img{position:absolute;inset:0;transition:transform .7s var(--ease)}
-.workshop-small:hover img{transform:scale(1.05)}
-.workshop-small:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 70%)}
-.workshop-small .image-copy{left:20px;bottom:18px}
-.workshop-small .image-copy h3{font-size:23px;margin:5px 0}
-.workshop-small .image-copy p{font-size:11px}
-
-/* SERVICES */
-.services{background:#10191e}
-.service-list{border-top:1px solid var(--line)}
-.service{display:grid;grid-template-columns:55px 1fr 1.1fr 45px;align-items:center;gap:22px;padding:27px 0;border-bottom:1px solid var(--line);transition:padding .3s var(--ease)}
+.strip{background:var(--cream);color:var(--ink);padding:22px 0}
+.strip-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.strip span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+.strip b{color:var(--blue);font-size:14px}
+.section{padding:120px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:50px}
+.section-head h2{margin:0}
+.section-head>p{max-width:350px;font-size:13px;line-height:1.9;margin:0 0 5px}
+.services{background:var(--cream);color:var(--ink)}
+.services .eyebrow{color:#404a4d}
+.services .eyebrow:before{background:var(--blue)}
+.services h2{color:var(--ink)}
+.services .section-head>p{color:#5e686b}
+.service-list{border-top:1px solid #d0d1ca}
+.service{display:grid;grid-template-columns:55px 1fr 1fr 44px;gap:22px;align-items:center;padding:27px 0;border-bottom:1px solid #d0d1ca;transition:padding .3s var(--ease)}
 .service:hover{padding-left:10px;padding-right:10px}
-.service-num{font-size:10px;color:#9eafff}
-.service h3{font-size:clamp(20px,2.5vw,30px);margin:0;font-weight:600}
-.service p{font-size:12px;max-width:380px;margin:0;line-height:1.8}
-.service-arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:all .25s}
-.service:hover .service-arrow{background:var(--blue);transform:rotate(45deg);border-color:var(--blue)}
+.service-num{font-size:10px;color:#7b8584}
+.service h3{font-size:clamp(21px,2.5vw,31px);font-weight:600;margin:0;letter-spacing:-.05em}
+.service p{font-size:12px;color:#626d6e;max-width:380px;margin:0;line-height:1.8}
+.service-arrow{display:grid;place-items:center;width:40px;height:40px;border:1px solid #c2c8c6;border-radius:50%;color:var(--ink);transition:all .25s}
+.service:hover .service-arrow{background:var(--blue);color:white;border-color:var(--blue);transform:rotate(45deg)}
 
-/* WORKSHOP GALLERY */
-.gallery{background:#0b1115}
-.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px 24px;align-items:start}
-.gallery-item:nth-child(even){margin-top:85px}
-.gallery-image{height:360px;overflow:hidden;background:#1a2529}
-.gallery-item:nth-child(even) .gallery-image{height:430px}
-.gallery-image img{transition:transform .8s var(--ease),filter .4s}
-.gallery-item:hover .gallery-image img{transform:scale(1.045);filter:brightness(1.08)}
-.gallery-caption{display:flex;justify-content:space-between;gap:15px;padding-top:17px}
-.gallery-caption h3{font-size:20px;font-weight:600;margin:0 0 5px}
-.gallery-caption p{font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin:0}
-.gallery-caption span{font-size:10px;color:#a8b4b5;padding-top:5px}
-.note{font-size:10px;color:#8f9b9e;margin-top:26px}
-
-/* ABOUT THE WORK */
-.about{background:#19272c}
-.about-grid{display:grid;grid-template-columns:1fr .9fr;gap:9%;align-items:center}
-.about-image{position:relative;min-height:520px}
-.about-image img:first-child{width:86%;height:490px}
-.about-image img:last-child{position:absolute;right:0;bottom:0;width:43%;height:225px;border:7px solid #19272c}
-.about-copy h2{margin:24px 0}
-.about-copy p{font-size:13px;line-height:2}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px;padding-top:24px;border-top:1px solid var(--line)}
-.values strong{display:block;font-family:Manrope,sans-serif;font-size:13px;margin-bottom:5px}
-.values span{font-size:11px;color:#aab5b8}
-
-/* PROCESS AND CONTACT */
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:50px}
-.process-step{padding:24px 20px 0 0;margin-right:20px;border-right:1px solid var(--line)}
-.process-step:last-child{margin:0;border:0}
-.process-step small{display:block;color:var(--ice);font-size:10px;letter-spacing:.13em;margin-bottom:37px}
-.process-step h3{font-size:22px;font-weight:600;margin-bottom:10px}
-.process-step p{font-size:12px;line-height:1.8;margin:0}
-.cta{background:var(--blue);padding:100px 0;position:relative;overflow:hidden}
-.cta:after{content:"A";position:absolute;right:2%;top:-100px;font:800 450px/1 Manrope,sans-serif;color:rgba(255,255,255,.07);pointer-events:none}
-.cta-inner{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:35px}
-.cta h2{max-width:700px;font-size:clamp(43px,7vw,88px);margin:24px 0 0}
-.cta .eyebrow:before{background:white}
-.cta p{max-width:335px;color:#e4e9ff;font-size:13px;line-height:1.9}
-.cta .btn{background:white;color:#172cad;border-color:white}
-footer{background:#080d10;padding:55px 0 23px}
-.footer-top{display:flex;justify-content:space-between;gap:35px;padding-bottom:40px}
-.footer-brand p{max-width:300px;font-size:12px;line-height:1.9;margin-top:16px}
+.work{background:#0d1519}
+.project-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px 28px;align-items:start}
+.project:nth-child(even){margin-top:100px}
+.project-image{aspect-ratio:1.22;position:relative;overflow:hidden;background:#1d292f;transform-style:preserve-3d;transition:transform .25s var(--ease)}
+.project:nth-child(even) .project-image{aspect-ratio:.96}
+.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .4s;will-change:transform}
+.project:hover .project-image img{transform:scale(1.055);filter:brightness(1.08)}
+.project-image:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.12);pointer-events:none}
+.project-caption{display:flex;justify-content:space-between;gap:15px;padding-top:18px}
+.project-caption h3{font-size:19px;font-weight:600;margin-bottom:5px;letter-spacing:-.04em}
+.project-caption p{font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.project-index{font-size:10px;color:#8b969a;padding-top:5px}
+.demo-note{font-size:10px;color:#869195;margin-top:35px}
+.about{background:#e7e6dd;color:var(--ink)}
+.about-grid{display:grid;grid-template-columns:1fr .9fr;gap:8%;align-items:center}
+.about-visual{position:relative;min-height:560px}
+.about-visual>img:first-child{width:83%;height:520px;object-fit:cover}
+.about-visual .inset{position:absolute;right:0;bottom:0;width:43%;height:245px;object-fit:cover;border:8px solid #e7e6dd}
+.about-copy .eyebrow{color:#465052}
+.about-copy h2{margin:22px 0}
+.about-copy p{color:#596366;font-size:13px;line-height:2}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:25px;border-top:1px solid #c5c8c1;margin-top:42px}
+.values strong{display:block;font-size:12px;margin-bottom:6px}
+.values span{font-size:11px;color:#697173}
+.process{background:#172329}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:54px}
+.process-step{padding:25px 22px 0 0;margin-right:22px;border-right:1px solid var(--line)}
+.process-step:last-child{border:0;margin:0}
+.process-step .num{font-size:9px;color:#a1b4ff;letter-spacing:.13em;display:block;margin-bottom:42px}
+.process-step h3{font-size:23px;font-weight:600;margin-bottom:12px}
+.process-step p{font-size:11px;line-height:1.9;margin:0}
+.cta{padding:108px 0;background:var(--blue);position:relative;overflow:hidden}
+.cta:after{content:"A";position:absolute;right:2%;top:-125px;font:800 490px/1 Manrope,sans-serif;color:rgba(255,255,255,.07);pointer-events:none}
+.cta-inner{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.cta h2{font-size:clamp(47px,7vw,91px);margin:22px 0 0}
+.cta h2 em{color:#c8d2ff}
+.cta-inner>div:last-child{max-width:360px}
+.cta p{font-size:12px;line-height:1.9;color:#e1e7ff}
+.cta .btn{background:#fff;color:#15279b;border-color:#fff}
+footer{padding:55px 0 23px;background:#080e11}
+.footer-top{display:flex;justify-content:space-between;gap:45px;flex-wrap:wrap;padding-bottom:42px}
+.footer-brand p{font-size:11px;max-width:300px;line-height:1.9;margin-top:18px}
 .footer-links{display:flex;gap:55px}
-.footer-links h4{font-size:10px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 15px}
-.footer-links a{display:block;font-size:12px;color:#aab4b7;margin:10px 0}
+.footer-links h4{font-size:9px;letter-spacing:.15em;text-transform:uppercase;margin:0 0 14px}
+.footer-links a{display:block;color:#abb5b8;font-size:11px;margin:10px 0;transition:color .2s}
 .footer-links a:hover{color:white}
-.footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:10px;color:#899598}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.footer-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;font-size:9px;color:#829094}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-@media(max-width:850px){
- .wrap{width:calc(100% - 40px)}
- .navlinks{gap:14px}.navlinks>a{font-size:10px}
- .nav .btn{padding:0 11px;font-size:10px}
- .hero-copy{max-width:78vw}.hero-meta{display:none}
- .section{padding:85px 0}
- .workshop-grid{grid-template-columns:1fr 1fr}
- .workshop-feature{min-height:430px}
- .workshop-small{min-height:205px}
- .service{grid-template-columns:36px 1fr 38px;gap:14px}
- .service p{grid-column:2;grid-row:2}
- .service-arrow{grid-column:3;grid-row:1}
- .about-grid{gap:5%}.about-image{min-height:430px}.about-image img:first-child{height:410px}.about-image img:last-child{height:185px}
- .cta-inner{display:block}.cta-inner>div:last-child{margin-top:25px}
+
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+ .story-scroll{height:auto}
+ .story-sticky{position:relative;height:88svh}
+ .scene-layer{transform:none!important}
 }
-@media(max-width:600px){
+@media(max-width:900px){
+ .wrap{width:calc(100% - 42px)}
+ .navlinks{gap:15px}
+ .navlinks>a{font-size:10px}
+ .nav .btn{padding:0 12px;gap:10px}
+ .section{padding:90px 0}
+ .story-copy{max-width:68vw}
+ .story-copy h1{font-size:clamp(55px,9.4vw,90px)}
+ .story-meta{top:auto;bottom:110px}
+ .hotspot-label{font-size:9px}
+ .hotspot-panel{width:290px}
+ .about-grid{gap:5%}
+ .about-visual{min-height:440px}
+ .about-visual>img:first-child{height:420px}
+ .about-visual .inset{height:185px}
+ .service{grid-template-columns:38px 1fr 1fr 40px;gap:14px}
+}
+@media(max-width:620px){
  .wrap{width:calc(100% - 36px)}
- header{height:70px}
- .brand{font-size:11px;gap:9px}.brand-symbol{width:29px;height:29px}
+ .topbar{height:70px}
+ .brand{font-size:11px;gap:9px}
+ .brand-mark{width:29px;height:29px}
  .menu-toggle{display:block}
- .navlinks{display:none;position:absolute;top:69px;left:0;right:0;background:#0b1115;padding:18px 20px;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line)}
+ .navlinks{display:none;position:absolute;top:69px;left:0;right:0;background:#0b1115;border-bottom:1px solid var(--line);padding:15px 20px;flex-direction:column;align-items:stretch;gap:0}
  .navlinks.open{display:flex}
- .navlinks a:not(.btn){font-size:13px;padding:13px 0;border-bottom:1px solid var(--line)}
- .navlinks .btn{margin-top:14px}
- .hero-copy{max-width:90vw;left:18px;top:48%}
- .hero-copy h1{font-size:clamp(49px,13vw,76px)}
- .hero-copy p{font-size:12px;max-width:330px}
- .hero-actions{gap:8px}.btn{min-height:48px;padding:0 14px;font-size:10px;gap:10px}
- .hero-guide{left:18px;bottom:36px;font-size:8px}
- .hero-count{right:18px;bottom:36px;font-size:8px}
+ .navlinks a{font-size:13px;padding:13px 0;border-bottom:1px solid var(--line)}
+ .navlinks a:last-child{border-bottom:0}
+ .nav>.btn{display:none}
+ .story-scroll{height:300vh}
  .story-sticky{min-height:620px}
- .story{height:300vh}
- .scene-photo{object-position:58% center}
- .scene-shade{background:linear-gradient(90deg,rgba(5,10,13,.7),rgba(5,10,13,.12)),linear-gradient(0deg,rgba(5,10,13,.8),transparent 55%)}
- .story .hero-copy{max-width:90vw;top:47%}
- .story .hero-copy h1{font-size:clamp(49px,13vw,76px)}
- .story .hero-copy p{font-size:12px}
- .scene-caption{left:18px;top:auto;bottom:100px;max-width:80vw}
- .scene-caption strong{font-size:30px}
+ .scene-car{object-position:58% center}
+ .scene-cabin{object-position:54% center}
+ .scene-engine{object-position:57% center}
+ .scene-vignette{background:linear-gradient(90deg,rgba(5,10,13,.7),rgba(5,10,13,.15)),linear-gradient(0deg,rgba(5,10,13,.78),transparent 56%)}
+ .story-copy{top:45%;left:18px;max-width:calc(100% - 36px)}
+ .story-copy .eyebrow{font-size:8px;margin-bottom:20px}
+ .story-copy h1{font-size:clamp(52px,14vw,76px)}
+ .story-copy p{font-size:12px;max-width:320px}
+ .story-actions .btn{min-height:46px;padding:0 13px;font-size:10px}
+ .story-meta{display:none}
+ .story-guide{left:18px;bottom:42px;font-size:8px}
+ .story-count{right:18px;bottom:42px;font-size:8px}
+ .scene-caption{left:18px;top:51%;max-width:285px}
+ .scene-caption strong{font-size:33px}
+ .scene-caption p{font-size:11px}
+ .hotspot{gap:0}
+ .hotspot-dot{width:31px;height:31px;font-size:9px}
  .hotspot-label{display:none}
- .hotspot.h1{left:12%;top:41%}.hotspot.h2{left:25%;top:69%}.hotspot.h3{left:57%;top:49%}.hotspot.h4{left:69%;top:71%}.hotspot.h5{left:48%;top:34%}
- .hotspot-panel{width:calc(100% - 36px);right:18px;bottom:68px;padding:14px 16px}
- .story-end{bottom:17%}
- .story-end strong{font-size:36px}
- .ticker{justify-content:center;gap:12px 16px;padding:18px}
- .ticker span{font-size:8px}
- .section{padding:70px 0}
- .section-head{display:block;margin-bottom:30px}
- .section-head>p{margin-top:17px}
- .workshop-grid{grid-template-columns:1fr;gap:14px}
- .workshop-feature{min-height:390px}
- .workshop-side{grid-template-rows:repeat(2,210px);gap:14px}
- .service{grid-template-columns:28px 1fr 32px;gap:10px;padding:22px 0}
+ .hotspot.h1{left:49%;top:41%}
+ .hotspot.h2{left:23%;top:63%}
+ .hotspot.h3{left:65%;top:66%}
+ .hotspot.h4{left:76%;top:49%}
+ .hotspot.h5{left:39%;top:33%}
+ .hotspot-panel{left:18px;right:18px;bottom:78px;width:auto;padding:15px 17px}
+ .hotspot-panel h3{font-size:19px;margin:5px 0}
+ .hotspot-panel p{font-size:10px}
+ .story-end-label{bottom:21%}
+ .story-end-label strong{font-size:39px}
+ .strip-inner{justify-content:center;gap:10px 17px}
+ .strip span{font-size:8px}
+ .strip b{font-size:10px}
+ .section{padding:76px 0}
+ .section-head{display:block;margin-bottom:33px}
+ .section-head>p{margin-top:20px}
+ .service{grid-template-columns:28px 1fr 33px;gap:10px;padding:23px 0}
  .service h3{font-size:19px}
- .service p{font-size:11px}
- .gallery-grid{grid-template-columns:1fr;gap:32px}
- .gallery-item:nth-child(even){margin-top:0}
- .gallery-image,.gallery-item:nth-child(even) .gallery-image{height:275px}
- .gallery-caption h3{font-size:18px}
- .about-grid{grid-template-columns:1fr;gap:38px}
- .about-image{min-height:370px}
- .about-image img:first-child{height:350px}
- .about-image img:last-child{height:155px;border-width:6px}
- .about-copy h2{font-size:43px}
- .values{gap:12px}.values strong{font-size:11px}.values span{font-size:10px}
- .process-grid{grid-template-columns:1fr 1fr;gap:0}
- .process-step{padding:22px 12px 23px 0;margin:0;border-bottom:1px solid var(--line)}
- .process-step:nth-child(even){padding-left:14px;margin:0;border-right:0}
- .process-step small{margin-bottom:22px;font-size:9px}
+ .service p{grid-column:2;grid-row:2;font-size:10px}
+ .service-arrow{grid-column:3;grid-row:1;width:32px;height:32px}
+ .project-grid{grid-template-columns:1fr;gap:36px}
+ .project:nth-child(even){margin-top:0}
+ .project-image,.project:nth-child(even) .project-image{aspect-ratio:1.12}
+ .project-caption h3{font-size:17px}
+ .about-grid{grid-template-columns:1fr;gap:40px}
+ .about-visual{min-height:390px}
+ .about-visual>img:first-child{height:360px}
+ .about-visual .inset{height:160px;width:44%;border-width:6px}
+ .about-copy h2{font-size:46px}
+ .values{gap:10px;margin-top:30px}
+ .values strong{font-size:10px}
+ .values span{font-size:9px}
+ .process-grid{grid-template-columns:1fr 1fr}
+ .process-step{padding:22px 12px 22px 0;margin:0;border-bottom:1px solid var(--line)}
+ .process-step:nth-child(even){padding-left:14px;border-right:0;margin:0}
+ .process-step .num{margin-bottom:22px}
  .process-step h3{font-size:19px}
- .process-step p{font-size:11px}
- .cta{padding:72px 0}
- .cta h2{font-size:48px}
- .cta:after{font-size:250px;top:25px;right:-15%}
+ .process-step p{font-size:10px}
+ .cta{padding:75px 0}
+ .cta-inner{display:block}
+ .cta h2{font-size:49px}
+ .cta-inner>div:last-child{margin-top:25px}
+ .cta:after{font-size:270px;right:-20%;top:20px}
  .footer-top{display:block}
  .footer-links{gap:36px;margin-top:28px}
- .footer-bottom{font-size:9px}
+ .footer-bottom{font-size:8px}
+}
+
+/* Workshop-focused editorial art direction */
+.work{background:#0d1519;padding-top:118px;padding-bottom:124px}
+.work .section-head{align-items:flex-end;margin-bottom:46px}
+.work .section-head h2{max-width:600px}
+.work .section-head p{max-width:410px;font-size:13px;line-height:1.95}
+.project-grid{grid-template-columns:1.08fr .92fr;gap:52px 28px}
+.project:nth-child(even){margin-top:78px}
+.project:nth-child(3){grid-column:1 / -1;display:grid;grid-template-columns:1.25fr .75fr;align-items:end;gap:28px;margin-top:0}
+.project:nth-child(3) .project-image{aspect-ratio:1.45}
+.project:nth-child(3) .project-caption{padding:0 0 17px}
+.project-image{background:#202a2e}
+.project-image img{filter:saturate(.82) contrast(1.04)}
+.project-image:before{content:"";position:absolute;z-index:1;inset:35% 0 0;background:linear-gradient(0deg,rgba(5,10,12,.35),transparent);opacity:.7;pointer-events:none}
+.project-caption h3{font-size:clamp(19px,2vw,25px)}
+.demo-note{max-width:900px;line-height:1.9;font-size:10px}
+.demo-note a{color:#b8c6ff;text-decoration:underline;text-underline-offset:3px}
+.about-visual>img:first-child{object-position:center}
+@media(max-width:900px){
+ .work{padding-top:88px;padding-bottom:90px}
+ .project-grid{gap:42px 22px}
+ .project:nth-child(even){margin-top:55px}
+ .project:nth-child(3){grid-template-columns:1fr .7fr}
+}
+@media(max-width:620px){
+ .work{padding-top:75px;padding-bottom:78px}
+ .work .section-head{margin-bottom:30px}
+ .project-grid{grid-template-columns:1fr;gap:32px}
+ .project:nth-child(even){margin-top:0}
+ .project:nth-child(even) .project-image,.project:nth-child(3) .project-image,.project-image{aspect-ratio:1.12}
+ .project:nth-child(3){grid-column:auto;display:block;gap:0}
+ .project:nth-child(3) .project-caption{padding-top:16px;padding-bottom:0}
+ .demo-note{font-size:9px;margin-top:26px}
 }
 </style>
 </head>
 <body>
 
-<header>
+<header class="topbar">
  <div class="wrap nav">
-  <a class="brand" href="#home" aria-label="APEX Auto Care home"><span class="brand-symbol"><span>A</span></span> APEX AUTO CARE</a>
+  <a class="brand" href="#home" aria-label="APEX Auto Care home"><span class="brand-mark"><span>A</span></span> APEX AUTO CARE</a>
   <nav class="navlinks" id="navlinks" aria-label="Main navigation">
-   <a href="#services">Services</a><a href="#workshop">The workshop</a><a href="#work">Our craft</a><a href="#about">About</a><a href="#contact">Contact</a>
-   <a class="btn" href="#contact">Book a service <span class="arrow">↗</span></a>
+   <a href="#services">Services</a><a href="#work">Workshop</a><a href="#about">About</a><a href="#process">Our approach</a><a href="#contact">Contact</a>
   </nav>
+  <a class="btn" href="#contact">Book a service <span class="arrow">↗</span></a>
   <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">MENU +</button>
  </div>
 </header>
 
 <main id="home">
+<section class="story-scroll" id="experience" aria-label="Cinematic automotive story">
+ <div class="story-sticky" id="storyScene">
+  <img class="scene-layer scene-car" id="sceneCar" src="https://commons.wikimedia.org/wiki/Special:FilePath/1967_Ford_Mustang_GTA_Fastback_%2815574283606%29.jpg?width=2200" alt="Red 1967 Ford Mustang GTA Fastback, photographed by Sicnag" fetchpriority="high">
+  <img class="scene-layer scene-cabin" id="sceneCabin" src="https://images.pexels.com/photos/4116193/pexels-photo-4116193.jpeg?auto=compress&dpr=1&h=750&w=1260" alt="A mechanic using a diagnostic tool inside a vehicle" loading="eager">
+  <img class="scene-layer scene-engine" id="sceneEngine" src="https://images.pexels.com/photos/33814735/pexels-photo-33814735/free-photo-of-mechanic-working-on-car-in-auto-workshop.jpeg?auto=compress&dpr=1&h=750&w=1260" alt="Mechanic carefully working under the open bonnet in a workshop" loading="eager">
+  <div class="scene-doors" aria-hidden="true"><div class="door-panel left" id="doorLeft"></div><div class="door-panel right" id="doorRight"></div></div>
+  <div class="scene-vignette"></div><div class="scene-grain"></div>
 
-<section class="story" id="experience" aria-label="Cinematic garage introduction">
- <div class="sticky-scene" id="stickyScene">
-  <img class="scene-photo scene-car" id="sceneCar" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=85" alt="Dramatic automotive photography of a sculpted performance car" fetchpriority="high">
-  <img class="scene-photo scene-work" id="sceneWork" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2200&q=85" alt="Vehicle being inspected in a working automotive service bay">
-  <img class="scene-photo scene-detail" id="sceneDetail" src="https://images.unsplash.com/photo-1632823471565-1ecdf5c6c6b3?auto=format&fit=crop&w=2200&q=85" alt="Close view of an automotive mechanical system">
-  <div class="scene-doors" id="sceneDoors" aria-hidden="true"><div class="door left" id="doorLeft"></div><div class="door right" id="doorRight"></div></div>
-  <div class="scene-shade"></div>
-
-  <div class="hero-copy" id="storyCopy">
-   <div class="eyebrow">Classic care. Modern precision.</div>
+  <div class="story-copy" id="storyCopy">
+   <div class="eyebrow">Classic spirit. Modern precision.</div>
    <h1>KEEP YOUR<br><em>LEGEND</em> ALIVE.</h1>
-   <p>Thoughtful servicing, careful diagnostics and repairs guided by the details. For the cars you drive — and the ones you keep forever.</p>
-   <div class="hero-actions"><a class="btn" href="#contact">Book a service <span class="arrow">↗</span></a><a class="btn btn-outline" href="#workshop">Enter the workshop <span class="arrow">↓</span></a></div>
+   <p>Thoughtful diagnostics. Skilled hands. Care that keeps every mile feeling right. For the cars you drive — and the ones you keep forever.</p>
+   <div class="story-actions"><a class="btn" href="#contact">Book a service <span class="arrow">↗</span></a><a class="btn btn-outline" href="#services">Explore services <span class="arrow">↓</span></a></div>
   </div>
 
-  <div class="hero-meta" id="storyMeta"><strong>Precision in every detail.</strong><span>Care for the road ahead</span></div>
-  <div class="scene-caption" id="sceneCaption"><small id="captionKicker">01 / THE MACHINE</small><strong id="captionTitle">Respect the machine.</strong><p id="captionText">Follow the work, from the vehicle itself to the tools and checks that help identify what it needs.</p></div>
+  <div class="story-meta" id="storyMeta"><strong>Precision in every detail.</strong><span>Automotive care · Reimagined</span></div>
+  <div class="scene-caption" id="sceneCaption"><span class="small" id="sceneCaptionKicker">01 / GET CLOSER</span><strong id="sceneCaptionTitle">Respect the machine.</strong><p id="sceneCaptionText">Good diagnostics start with a careful look, not a guess.</p></div>
 
-  <div class="hotspots" id="hotspots" aria-label="Interactive service areas">
-   <button class="hotspot h1" data-title="Engine & performance" data-text="Careful inspections, diagnostic checks and repairs guided by what the engine actually needs." aria-pressed="true"><span class="hotspot-dot">01</span><span class="hotspot-label">Engine</span></button>
-   <button class="hotspot h2" data-title="Brakes & safety" data-text="Inspection and servicing focused on predictable braking, road safety and confidence." aria-pressed="false"><span class="hotspot-dot">02</span><span class="hotspot-label">Brakes</span></button>
-   <button class="hotspot h3" data-title="Suspension & steering" data-text="Checks for ride quality, steering response, worn components and alignment concerns." aria-pressed="false"><span class="hotspot-dot">03</span><span class="hotspot-label">Suspension</span></button>
-   <button class="hotspot h4" data-title="Electrical diagnostics" data-text="A systematic look at sensors, wiring, charging systems and electronic faults." aria-pressed="false"><span class="hotspot-dot">04</span><span class="hotspot-label">Diagnostics</span></button>
-   <button class="hotspot h5" data-title="Maintenance & inspection" data-text="Routine checks and scheduled maintenance help you understand what needs attention next." aria-pressed="false"><span class="hotspot-dot">05</span><span class="hotspot-label">Inspection</span></button>
+  <div class="hotspots" id="hotspots" aria-label="Interactive vehicle service areas">
+   <button class="hotspot h1" data-title="Engine & performance" data-text="Careful inspections, troubleshooting and repairs focused on the heart of your vehicle." aria-pressed="true"><span class="hotspot-dot">01</span><span class="hotspot-label">Engine & performance</span></button>
+   <button class="hotspot h2" data-title="Brakes & safety" data-text="Thoughtful checks of brake components and essential safety systems to help keep every drive confident." aria-pressed="false"><span class="hotspot-dot">02</span><span class="hotspot-label">Brakes & safety</span></button>
+   <button class="hotspot h3" data-title="Suspension & steering" data-text="Attention to ride quality, alignment and steering response for a more composed drive." aria-pressed="false"><span class="hotspot-dot">03</span><span class="hotspot-label">Suspension & steering</span></button>
+   <button class="hotspot h4" data-title="Transmission & drivetrain" data-text="Inspection and servicing for smooth, consistent power delivery and dependable performance." aria-pressed="false"><span class="hotspot-dot">04</span><span class="hotspot-label">Transmission & drivetrain</span></button>
+   <button class="hotspot h5" data-title="Electrical & diagnostics" data-text="Systematic fault-finding for sensors, wiring and modern vehicle electronics." aria-pressed="false"><span class="hotspot-dot">05</span><span class="hotspot-label">Electrical & diagnostics</span></button>
   </div>
 
-  <aside class="hotspot-panel" id="hotspotPanel" aria-live="polite">
-   <small id="panelNumber">01 / SERVICE POINT</small><h3 id="panelTitle">Engine & performance</h3><p id="panelText">Careful inspections, diagnostic checks and repairs guided by what the engine actually needs.</p>
+  <aside class="hotspot-panel is-visible" id="hotspotPanel" aria-live="polite">
+   <div class="panel-kicker">Service area <span id="panelNumber">01</span> / 05</div>
+   <h3 id="panelTitle">Engine & performance</h3>
+   <p id="panelText">Careful inspections, troubleshooting and repairs focused on the heart of your vehicle.</p>
   </aside>
 
-  <div class="story-end" id="storyEnd"><small>THE WORK BEHIND EVERY JOURNEY</small><strong>People. Process.<br>Precision.</strong></div>
-  <div class="hero-guide"><span class="guide-line"></span><span id="guideText">Scroll to get closer</span></div>
-  <div class="hero-count" id="heroCount">01 — 04 / THE MACHINE</div>
-  <div class="story-progress"><span id="storyProgress"></span></div>
+  <div class="story-end-label" id="storyEndLabel"><span>APEX AUTO CARE · THE STANDARD</span><strong>Good care changes<br><em>every mile.</em></strong></div>
+  <div class="story-guide"><span class="guide-line"></span><span id="guideText">Scroll to get closer</span></div>
+  <div class="story-count" id="storyCount">01 — 04 / THE DETAIL</div>
+  <div class="story-meter"><span id="storyMeter"></span></div>
  </div>
 </section>
 
-<div class="ticker" aria-label="Our service principles"><span><b>✳</b> Careful inspections</span><span><b>✳</b> Clear explanations</span><span><b>✳</b> Thoughtful repairs</span><span><b>✳</b> Work without guesswork</span></div>
-
-<section class="section workshop-intro" id="workshop">
- <div class="wrap">
-  <div class="section-head reveal">
-   <div><div class="eyebrow">Inside the workshop</div><h2>GOOD WORK<br>HAPPENS <em>HERE.</em></h2></div>
-   <p>A garage is more than the cars that come through the door. It is the technicians, the tools, the careful checks and the methodical work that gets vehicles back on the road.</p>
-  </div>
-  <div class="workshop-grid">
-   <article class="workshop-feature reveal">
-    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1300&q=85" alt="Vehicle being worked on in an automotive repair workshop" loading="lazy">
-    <div class="image-copy"><small>01 / IN THE SERVICE BAY</small><h3>Start with a proper inspection.</h3><p>Look closely, listen to the driver and understand the issue before deciding on the work.</p></div>
-   </article>
-   <div class="workshop-side">
-    <article class="workshop-small reveal">
-     <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c6c6b3?auto=format&fit=crop&w=1000&q=85" alt="Detailed automotive mechanical components" loading="lazy">
-     <div class="image-copy"><small>02 / UNDER THE BONNET</small><h3>Look beyond the surface.</h3><p>Diagnostics and mechanical checks, not guesswork.</p></div>
-    </article>
-    <article class="workshop-small reveal">
-     <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=85" alt="Car inside a clean automotive service environment" loading="lazy">
-     <div class="image-copy"><small>03 / THROUGH THE DETAILS</small><h3>Care at every stage.</h3><p>A clear plan from first check to final review.</p></div>
-    </article>
-   </div>
-  </div>
- </div>
-</section>
+<div class="strip">
+ <div class="wrap strip-inner"><span>Engine diagnostics</span><b>✳</b><span>Hands-on repairs</span><b>✳</b><span>Vehicle inspections</span><b>✳</b><span>Lift &amp; underbody checks</span><b>✳</b><span>Routine maintenance</span></div>
+</div>
 
 <section class="section services" id="services">
  <div class="wrap">
-  <div class="section-head reveal">
-   <div><div class="eyebrow">What we do</div><h2>THE RIGHT WORK.<br><em>DONE THOUGHTFULLY.</em></h2></div>
-   <p>From routine maintenance to troubleshooting a difficult fault, good service begins with understanding the vehicle and explaining the next step clearly.</p>
-  </div>
+  <div class="section-head reveal"><div><div class="eyebrow">What we do</div><h2>Good work.<br><em>Nothing overlooked.</em></h2></div><p>From the first inspection to the final road-readiness check, we focus on the practical work that keeps a vehicle safe, reliable and ready to drive.</p></div>
   <div class="service-list">
-   <a class="service reveal" href="#contact"><span class="service-num">01</span><h3>Engine diagnostics & repair</h3><p>Systematic checks to understand warning lights, performance changes and mechanical concerns.</p><span class="service-arrow">↗</span></a>
-   <a class="service reveal" href="#contact"><span class="service-num">02</span><h3>Brakes & safety</h3><p>Brake inspections, wear checks and servicing focused on dependable stopping performance.</p><span class="service-arrow">↗</span></a>
-   <a class="service reveal" href="#contact"><span class="service-num">03</span><h3>Suspension & steering</h3><p>Investigating unusual noises, ride quality, handling and steering concerns.</p><span class="service-arrow">↗</span></a>
-   <a class="service reveal" href="#contact"><span class="service-num">04</span><h3>Electrical systems</h3><p>Fault-finding for charging, starting, sensors and other vehicle electronics.</p><span class="service-arrow">↗</span></a>
-   <a class="service reveal" href="#contact"><span class="service-num">05</span><h3>Routine maintenance</h3><p>Oil and filter changes, fluid checks and scheduled maintenance based on vehicle needs.</p><span class="service-arrow">↗</span></a>
+   <a class="service reveal" href="#contact" data-service="Diagnostics & repair"><span class="service-num">01</span><h3>Diagnostics &amp; repair</h3><p>Clear answers, careful troubleshooting and repairs guided by the actual problem.</p><span class="service-arrow">↗</span></a>
+   <a class="service reveal" href="#contact" data-service="Engine & transmission"><span class="service-num">02</span><h3>Engine &amp; transmission</h3><p>Thoughtful mechanical attention to the systems that keep every journey moving.</p><span class="service-arrow">↗</span></a>
+   <a class="service reveal" href="#contact" data-service="Brakes & suspension"><span class="service-num">03</span><h3>Brakes &amp; suspension</h3><p>Inspection and maintenance focused on handling, confidence and road safety.</p><span class="service-arrow">↗</span></a>
+   <a class="service reveal" href="#contact" data-service="Electrical systems"><span class="service-num">04</span><h3>Electrical systems</h3><p>Systematic investigation of electrical faults, sensors and vehicle electronics.</p><span class="service-arrow">↗</span></a>
+   <a class="service reveal" href="#contact" data-service="Detailing & maintenance"><span class="service-num">05</span><h3>Detailing &amp; maintenance</h3><p>Care for the finish, interior and everyday details that make a vehicle feel special.</p><span class="service-arrow">↗</span></a>
   </div>
  </div>
 </section>
 
-<section class="section gallery" id="work">
+<section class="section work" id="work">
  <div class="wrap">
-  <div class="section-head reveal">
-   <div><div class="eyebrow">Cars in our world</div><h2>THE MACHINE IS ONLY<br><em>HALF THE STORY.</em></h2></div>
-   <p>Real garage work means a mix of vehicles, hands-on checks, practical tools and attention to small details. This demo gallery shows the kind of visual story a working garage can tell.</p>
+  <div class="section-head reveal"><div><div class="eyebrow">Inside the workshop</div><h2>Real work.<br><em>Skilled hands.</em></h2></div><p>Open bonnets, cars on lifts and diagnostic tools in use. This is the work behind every drive: inspect carefully, explain the findings and focus on the repair the vehicle actually needs.</p></div>
+  <div class="project-grid">
+   <article class="project reveal"><div class="project-image"><img loading="lazy" src="https://images.pexels.com/photos/33814735/pexels-photo-33814735/free-photo-of-mechanic-working-on-car-in-auto-workshop.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260" alt="Mechanic leaning over an open engine bay and carrying out hands-on repair"></div><div class="project-caption"><div><h3>Under the hood</h3><p>Engine diagnostics &amp; repair</p></div><span class="project-index">01 / 03</span></div></article>
+   <article class="project reveal"><div class="project-image"><img loading="lazy" src="https://images.pexels.com/photos/7019605/pexels-photo-7019605.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260" alt="Mechanic inspecting the underside of a vehicle in a working repair garage"></div><div class="project-caption"><div><h3>Under the lift</h3><p>Mechanical inspection</p></div><span class="project-index">02 / 03</span></div></article>
+   <article class="project reveal"><div class="project-image"><img loading="lazy" src="https://images.pexels.com/photos/4116193/pexels-photo-4116193.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260" alt="Technician checking vehicle systems with a handheld diagnostic scanner inside a car"></div><div class="project-caption"><div><h3>Connected &amp; checked</h3><p>Vehicle diagnostics</p></div><span class="project-index">03 / 03</span></div></article>
   </div>
-  <div class="gallery-grid">
-   <article class="gallery-item reveal"><div class="gallery-image"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1300&q=85" alt="Automotive technician's working environment" loading="lazy"></div><div class="gallery-caption"><div><h3>In the service bay</h3><p>Inspection & repair</p></div><span>01 / 03</span></div></article>
-   <article class="gallery-item reveal"><div class="gallery-image"><img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c6c6b3?auto=format&fit=crop&w=1100&q=85" alt="Close view of vehicle mechanical components" loading="lazy"></div><div class="gallery-caption"><div><h3>Under the bonnet</h3><p>Mechanical detail</p></div><span>02 / 03</span></div></article>
-   <article class="gallery-item reveal"><div class="gallery-image"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1300&q=85" alt="Car in a workshop environment" loading="lazy"></div><div class="gallery-caption"><div><h3>Ready for attention</h3><p>Vehicle care</p></div><span>03 / 03</span></div></article>
-  </div>
-  <p class="note">Illustrative automotive photography for this concept website. Images are not claimed to show APEX customers or staff.</p>
+  <p class="demo-note">Photography is illustrative and does not depict APEX employees or verified customer jobs. Photos: <a href="https://www.pexels.com/photo/mechanic-working-on-car-in-auto-workshop-33814735/" target="_blank" rel="noreferrer">Renee Razumov</a>, <a href="https://www.pexels.com/photo/auto-mechanic-working-on-car-shop-7019605/" target="_blank" rel="noreferrer">cottonbro studio</a>, <a href="https://www.pexels.com/photo/person-holding-blue-diagnostic-tool-4116193/" target="_blank" rel="noreferrer">Jose Ricardo Barraza Morachis</a>, <a href="https://www.pexels.com/photo/interior-of-auto-repair-workshop-20872010/" target="_blank" rel="noreferrer">Shuaizhi Tian</a> and <a href="https://www.pexels.com/photo/serious-mechanic-checking-car-wheels-on-lift-in-modern-car-service-garage-3807799/" target="_blank" rel="noreferrer">Andrea Piacquadio</a> via Pexels. The hero Mustang photo is by <a href="https://commons.wikimedia.org/wiki/File:1967_Ford_Mustang_GTA_Fastback_(15574283606).jpg" target="_blank" rel="noreferrer">Sicnag / Wikimedia Commons</a> under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noreferrer">CC BY 2.0</a>.</p>
  </div>
 </section>
 
 <section class="section about" id="about">
- <div class="wrap">
-  <div class="about-grid">
-   <div class="about-image reveal">
-    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85" alt="Vehicle being inspected in a workshop" loading="lazy">
-    <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c6c6b3?auto=format&fit=crop&w=750&q=85" alt="Close-up of automotive mechanical detail" loading="lazy">
-   </div>
-   <div class="about-copy reveal">
-    <div class="eyebrow">The APEX approach</div>
-    <h2>RESPECT THE MACHINE.<br><em>RESPECT THE DRIVE.</em></h2>
-    <p>Good automotive care is about more than fixing what is broken. It is about listening carefully, inspecting methodically, explaining the findings and treating every vehicle with attention.</p>
-    <p>APEX is a fictional garage concept built around a simple promise: clear communication, a considered service process and work guided by what the vehicle actually needs.</p>
-    <a class="btn" href="#process">How we work <span class="arrow">↗</span></a>
-   </div>
+ <div class="wrap about-grid">
+  <div class="about-visual reveal">
+   <img loading="lazy" src="https://images.pexels.com/photos/20872010/pexels-photo-20872010/free-photo-of-interior-of-auto-repair-workshop.jpeg?auto=compress&dpr=1&h=750&w=1260" alt="Cars, workshop tools and service equipment inside an auto repair garage">
+   <img class="inset" loading="lazy" src="https://images.pexels.com/photos/3807799/pexels-photo-3807799.jpeg?auto=compress&dpr=1&h=750&w=1260" alt="Technician checking a vehicle on a workshop lift">
   </div>
-  <div class="values reveal">
-   <div><strong>Clear communication</strong><span>Understand the work before it begins.</span></div>
-   <div><strong>Careful inspection</strong><span>Check the details that matter.</span></div>
-   <div><strong>Thoughtful service</strong><span>Know what happens next.</span></div>
-  </div>
+  <div class="about-copy reveal"><div class="eyebrow">The APEX approach</div><h2>Respect the machine.<br><em>Respect the drive.</em></h2><p>Good automotive care is about more than fixing what is broken. It is about listening carefully, explaining clearly and treating every vehicle with the attention it deserves.</p><p>APEX is a fictional garage concept built around a simple idea: precise work, honest communication and a better experience from enquiry to handover.</p><a class="btn" href="#process">How we work <span class="arrow">↗</span></a></div>
  </div>
+ <div class="wrap values"><div><strong>Clear communication</strong><span>Understand the work before it begins.</span></div><div><strong>Careful inspection</strong><span>Attention to the details that matter.</span></div><div><strong>Thoughtful service</strong><span>A considered experience at every step.</span></div></div>
 </section>
 
 <section class="section process" id="process">
  <div class="wrap">
-  <div class="section-head reveal">
-   <div><div class="eyebrow">A better service experience</div><h2>FROM FIRST HELLO<br>TO <em>BACK ON THE ROAD.</em></h2></div>
-   <p>A straightforward process helps drivers understand the concern, the findings and the next step before work begins.</p>
-  </div>
+  <div class="eyebrow reveal">A better experience</div>
+  <div class="section-head reveal" style="margin-top:20px"><h2>From first hello<br>to <em>back on the road.</em></h2><p>A clear service process: understand the concern, inspect the vehicle, explain the findings, and agree on the work before it begins.</p></div>
   <div class="process-grid">
-   <article class="process-step reveal"><small>01 — DISCOVER</small><h3>We listen.</h3><p>Tell us about the vehicle, symptoms and what you have noticed.</p></article>
-   <article class="process-step reveal"><small>02 — INSPECT</small><h3>We investigate.</h3><p>Check the issue methodically and identify what needs attention.</p></article>
-   <article class="process-step reveal"><small>03 — EXPLAIN</small><h3>We clarify.</h3><p>Discuss findings, recommended repairs and expected costs.</p></article>
-   <article class="process-step reveal"><small>04 — CARE</small><h3>Back to driving.</h3><p>Complete the agreed work and explain the next maintenance steps.</p></article>
+   <article class="process-step reveal"><span class="num">01 — DISCOVER</span><h3>We listen.</h3><p>Tell us about your vehicle, your concern and what you need from the visit.</p></article>
+   <article class="process-step reveal"><span class="num">02 — INSPECT</span><h3>We investigate.</h3><p>Understand the issue and identify the appropriate checks or next steps.</p></article>
+   <article class="process-step reveal"><span class="num">03 — EXPLAIN</span><h3>We clarify.</h3><p>Discuss the findings, recommended work and expected costs before proceeding.</p></article>
+   <article class="process-step reveal"><span class="num">04 — CARE</span><h3>Back to driving.</h3><p>Complete the agreed work and explain what was done and what comes next.</p></article>
   </div>
  </div>
 </section>
 
 <section class="cta" id="contact">
  <div class="wrap cta-inner">
-  <div><div class="eyebrow">Let's talk about your vehicle</div><h2>EVERY GREAT DRIVE<br>STARTS WITH <em>GOOD CARE.</em></h2></div>
-  <div><p>Have a question or need to arrange a service? Tell us what you're driving and how we can help.</p><a class="btn" href="mailto:hello@example.com?subject=APEX%20Auto%20Care%20Enquiry">Make an enquiry <span class="arrow">↗</span></a><p style="font-size:10px;margin-top:12px">Demo contact email — replace before using for a real garage.</p></div>
+  <div><div class="eyebrow">Let's talk about your vehicle</div><h2>Every great drive<br>starts with <em>good care.</em></h2></div>
+  <div><p>Have a question or need to arrange a service? Tell us what you're driving and how we can help.</p><a class="btn" id="contactButton" href="mailto:hello@example.com?subject=APEX%20Auto%20Care%20Enquiry">Make an enquiry <span class="arrow">↗</span></a><p style="font-size:10px;margin-top:14px;color:#d5ddff">Portfolio demo · Replace the sample email before using for a real garage.</p></div>
  </div>
 </section>
 </main>
@@ -426,13 +434,13 @@ footer{background:#080d10;padding:55px 0 23px}
 <footer>
  <div class="wrap">
   <div class="footer-top">
-   <div class="footer-brand"><a class="brand" href="#home"><span class="brand-symbol"><span>A</span></span> APEX AUTO CARE</a><p>A garage website concept centred on the people, process and practical work behind vehicle care.</p></div>
+   <div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark"><span>A</span></span> APEX AUTO CARE</a><p>A garage website concept centred on the people, process and practical work behind reliable motoring.</p></div>
    <div class="footer-links">
-    <div><h4>Explore</h4><a href="#services">Services</a><a href="#workshop">The workshop</a><a href="#work">Our craft</a><a href="#about">About Apex</a></div>
+    <div><h4>Explore</h4><a href="#services">Services</a><a href="#work">Workshop</a><a href="#about">About Apex</a><a href="#process">Our approach</a></div>
     <div><h4>Get in touch</h4><a href="#contact">Enquiries</a><a href="mailto:hello@example.com">Email placeholder</a><a href="#home">Back to top ↑</a></div>
    </div>
   </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> APEX AUTO CARE · CONCEPT WEBSITE</span><span>Fictional portfolio demo — not a claim of a real operating garage.</span></div>
+  <div class="footer-bottom"><span>© <span id="year"></span> APEX AUTO CARE · CONCEPT WEBSITE</span><span>Fictional portfolio demo · not a claim of a real operating garage.</span></div>
  </div>
 </footer>
 
@@ -449,8 +457,8 @@ if(menu&&nav){
   menu.setAttribute('aria-expanded',String(open));
   menu.textContent=open?'CLOSE −':'MENU +';
  });
- nav.querySelectorAll('a').forEach(function(link){
-  link.addEventListener('click',function(){
+ nav.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){
    nav.classList.remove('open');
    menu.setAttribute('aria-expanded','false');
    menu.textContent='MENU +';
@@ -460,163 +468,161 @@ if(menu&&nav){
 
 document.getElementById('year').textContent=new Date().getFullYear();
 
-const reveals=document.querySelectorAll('.reveal');
+const revealEls=document.querySelectorAll('.reveal');
 if(!reduced&&'IntersectionObserver' in window){
- const observer=new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-   if(entry.isIntersecting){
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
+ const io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+   if(e.isIntersecting){
+    e.target.classList.add('visible');
+    io.unobserve(e.target);
    }
   });
  },{threshold:.12});
- reveals.forEach(function(el){observer.observe(el);});
+ revealEls.forEach(function(el){io.observe(el);});
 }else{
- reveals.forEach(function(el){el.classList.add('visible');});
+ revealEls.forEach(function(el){el.classList.add('visible');});
 }
 
-/* Scroll progress drives the pinned visual journey. */
 const story=document.getElementById('experience');
 const car=document.getElementById('sceneCar');
-const work=document.getElementById('sceneWork');
-const detail=document.getElementById('sceneDetail');
+const cabin=document.getElementById('sceneCabin');
+const engine=document.getElementById('sceneEngine');
 const copy=document.getElementById('storyCopy');
 const meta=document.getElementById('storyMeta');
 const caption=document.getElementById('sceneCaption');
-const captionKicker=document.getElementById('captionKicker');
-const captionTitle=document.getElementById('captionTitle');
-const captionText=document.getElementById('captionText');
-const doors=document.getElementById('sceneDoors');
-const doorLeft=document.getElementById('doorLeft');
-const doorRight=document.getElementById('doorRight');
+const capKicker=document.getElementById('sceneCaptionKicker');
+const capTitle=document.getElementById('sceneCaptionTitle');
+const capText=document.getElementById('sceneCaptionText');
 const hotspots=document.getElementById('hotspots');
 const panel=document.getElementById('hotspotPanel');
-const panelNumber=document.getElementById('panelNumber');
-const panelTitle=document.getElementById('panelTitle');
-const panelText=document.getElementById('panelText');
-const endLabel=document.getElementById('storyEnd');
-const progressBar=document.getElementById('storyProgress');
-const count=document.getElementById('heroCount');
+const endLabel=document.getElementById('storyEndLabel');
+const meter=document.getElementById('storyMeter');
+const count=document.getElementById('storyCount');
 const guide=document.getElementById('guideText');
-let raf=0;
+const doorLeft=document.getElementById('doorLeft');
+const doorRight=document.getElementById('doorRight');
 
-function clamp(value,min,max){return Math.max(min,Math.min(max,value));}
+let scrollRaf=0;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function smooth(a,b,p){const t=clamp((p-a)/(b-a),0,1);return t*t*(3-2*t);}
 
 function updateStory(){
- raf=0;
+ scrollRaf=0;
  if(!story)return;
  const rect=story.getBoundingClientRect();
  const travel=Math.max(1,story.offsetHeight-window.innerHeight);
  const p=clamp(-rect.top/travel,0,1);
- const workP=smooth(.25,.48,p);
- const detailP=smooth(.48,.70,p);
- const closeP=smooth(.82,.97,p);
+ const cabinP=smooth(.22,.48,p);
+ const engineP=smooth(.47,.72,p);
+ const closeP=smooth(.82,.98,p);
 
  if(car){
-  car.style.transform='scale('+(1.04+p*.25)+') translate3d(0,'+(-p*2)+'%,0)';
-  car.style.opacity=String(1-smooth(.28,.48,p)*.96);
+  car.style.transform='scale('+(1.04+p*.28)+') translate3d(0,'+(-p*2.5)+'%,0)';
+  car.style.opacity=String(1-smooth(.29,.55,p)*.92);
  }
- if(work){
-  work.style.opacity=String(workP*(1-detailP*.96));
-  work.style.transform='scale('+(1.15-p*.13)+') translate3d(0,'+(-p*1.5)+'%,0)';
+ if(cabin){
+  cabin.style.opacity=String(cabinP*(1-engineP*.95));
+  cabin.style.transform='scale('+(1.18-p*.14)+') translate3d(0,'+(-p*1.6)+'%,0)';
  }
- if(detail){
-  detail.style.opacity=String(detailP*(1-closeP));
-  detail.style.transform='scale('+(1.16-p*.14)+') translate3d(0,'+(-p*1.2)+'%,0)';
+ if(engine){
+  engine.style.opacity=String(engineP*(1-closeP));
+  engine.style.transform='scale('+(1.17-p*.13)+') translate3d(0,'+(-p*1.2)+'%,0)';
  }
  if(copy){
-  copy.style.opacity=String(1-smooth(.04,.22,p));
-  copy.style.transform='translate3d(0,'+(-40-p*35)+'%,0)';
+  copy.style.opacity=String(1-smooth(.04,.23,p));
+  copy.style.transform='translate3d(0,'+(-42-p*36)+'%,0)';
  }
  if(meta)meta.style.opacity=String(1-smooth(.08,.24,p));
 
  if(caption){
-  const opacity=smooth(.22,.31,p)*(1-smooth(.79,.90,p));
-  caption.style.opacity=String(opacity);
-  caption.style.transform='translateY('+(20-opacity*20)+'px)';
- }
- if(p<.30){
-  captionKicker.textContent='01 / THE MACHINE';
-  captionTitle.textContent='Respect the machine.';
-  captionText.textContent='Start with the vehicle, then follow the careful work that helps explain what it needs.';
- }else if(p<.53){
-  captionKicker.textContent='02 / IN THE SERVICE BAY';
-  captionTitle.textContent='Look beyond the surface.';
-  captionText.textContent='Good repairs begin with an inspection and a methodical understanding of the problem.';
- }else{
-  captionKicker.textContent='03 / UNDER THE SURFACE';
-  captionTitle.textContent='Precision in practice.';
-  captionText.textContent='The right tools, clear findings and careful work make the difference.';
+  const op=smooth(.22,.32,p)*(1-smooth(.78,.91,p));
+  caption.style.opacity=String(op);
+  caption.style.transform='translateY('+(25-op*25)+'px)';
  }
 
- const doorProgress=smooth(.05,.25,p)*(1-smooth(.80,.94,p));
- if(doors)doors.style.opacity=String(doorProgress);
- if(doorLeft)doorLeft.style.transform='rotateY('+(-doorProgress*78)+'deg)';
- if(doorRight)doorRight.style.transform='rotateY('+(doorProgress*78)+'deg)';
+ if(p<.28){
+  capKicker.textContent='01 / THE MACHINE';
+  capTitle.textContent='Respect the machine.';
+  capText.textContent='Follow the work from the open bonnet to the tools and checks that help diagnose a fault.';
+ }else if(p<.54){
+  capKicker.textContent='02 / GET CLOSER';
+  capTitle.textContent='Every detail matters.';
+  capText.textContent='We look beyond the surface to understand what your vehicle needs.';
+ }else{
+  capKicker.textContent='03 / UNDER THE SURFACE';
+  capTitle.textContent='Precision in practice.';
+  capText.textContent='A real repair starts with a clear diagnosis, the right tools and an explanation of what needs attention.';
+ }
+
+ const doorOpen=smooth(.04,.24,p)*(1-smooth(.80,.95,p));
+ if(doorLeft)doorLeft.style.transform='rotateY('+(-doorOpen*99)+'deg)';
+ if(doorRight)doorRight.style.transform='rotateY('+(doorOpen*99)+'deg)';
 
  const hotOn=p>=.53&&p<.84;
  if(hotspots){
-  hotspots.classList.toggle('active',hotOn);
+  hotspots.classList.toggle('is-active',hotOn);
   hotspots.style.opacity=hotOn?'1':'0';
  }
- if(panel&&!hotOn)panel.classList.remove('visible');
-
- if(endLabel){
-  const opacity=smooth(.85,.98,p);
-  endLabel.style.opacity=String(opacity);
-  endLabel.style.transform='translate(-50%,'+(20-opacity*20)+'px)';
+ if(panel){
+  const panelVisible=hotOn;
+  panel.classList.toggle('is-visible',panelVisible);
  }
- if(progressBar)progressBar.style.transform='scaleX('+p+')';
- if(count)count.textContent=p<.25?'01 — 04 / THE MACHINE':p<.50?'02 — 04 / THE WORKSHOP':p<.84?'03 — 04 / THE DETAILS':'04 — 04 / THE STANDARD';
- if(guide)guide.textContent=p<.24?'Scroll to get closer':p<.50?'Enter the workshop':p<.84?'Explore the service points':'Continue into the garage';
+ if(endLabel){
+  const o=smooth(.84,.98,p);
+  endLabel.style.opacity=String(o);
+  endLabel.style.transform='translate(-50%,'+(20-o*20)+'px)';
+ }
+ if(meter)meter.style.transform='scaleX('+p+')';
+ if(count)count.textContent=p<.25?'01 — 04 / THE MACHINE':p<.52?'02 — 04 / GET CLOSER':p<.84?'03 — 04 / THE DETAILS':'04 — 04 / THE STANDARD';
+ if(guide)guide.textContent=p<.22?'Scroll to get closer':p<.52?'Look beneath the surface':p<.84?'Explore the service points':'Continue into the workshop';
 }
 
 function onScroll(){
- if(!raf)raf=requestAnimationFrame(updateStory);
+ if(!scrollRaf)scrollRaf=requestAnimationFrame(updateStory);
 }
+
 if(reduced){
  if(story)story.style.height='auto';
- if(car)car.style.transform='none';
- if(work)work.style.opacity='0';
- if(detail)detail.style.opacity='0';
- if(doors)doors.style.display='none';
- if(copy)copy.style.opacity='1';
+ if(car){car.style.opacity='1';car.style.transform='none';}
+ if(cabin)cabin.style.opacity='0';
+ if(engine)engine.style.opacity='0';
+ if(copy){copy.style.opacity='1';copy.style.transform='translateY(-42%)';}
  if(meta)meta.style.opacity='1';
- if(caption)caption.style.display='none';
- if(hotspots)hotspots.style.display='none';
- if(endLabel)endLabel.style.display='none';
- if(progressBar)progressBar.style.transform='scaleX(0)';
+ if(doorLeft)doorLeft.style.transform='none';
+ if(doorRight)doorRight.style.transform='none';
+ if(caption)caption.style.opacity='0';
+ if(hotspots){hotspots.style.opacity='0';hotspots.classList.remove('is-active');}
+ if(panel)panel.classList.remove('is-visible');
+ if(endLabel)endLabel.style.opacity='0';
+ if(meter)meter.style.transform='scaleX(0)';
 }else{
  window.addEventListener('scroll',onScroll,{passive:true});
  window.addEventListener('resize',onScroll);
  updateStory();
 }
 
-/* Each hotspot opens a real, readable service description. */
-const buttons=document.querySelectorAll('.hotspot');
-buttons.forEach(function(button,index){
+const hotspotButtons=document.querySelectorAll('.hotspot');
+hotspotButtons.forEach(function(button,index){
  button.addEventListener('click',function(){
-  buttons.forEach(function(other){other.setAttribute('aria-pressed','false');});
+  hotspotButtons.forEach(function(b){b.setAttribute('aria-pressed','false');});
   button.setAttribute('aria-pressed','true');
-  panelNumber.textContent=String(index+1).padStart(2,'0')+' / SERVICE POINT';
-  panelTitle.textContent=button.dataset.title;
-  panelText.textContent=button.dataset.text;
-  panel.classList.add('visible');
+  document.getElementById('panelNumber').textContent=String(index+1).padStart(2,'0');
+  document.getElementById('panelTitle').textContent=button.dataset.title;
+  document.getElementById('panelText').textContent=button.dataset.text;
  });
 });
 
-/* Refined perspective on workshop/gallery imagery, desktop only. */
-if(window.matchMedia('(pointer:fine)').matches&&!reduced){
- document.querySelectorAll('.gallery-image,.workshop-feature,.workshop-small').forEach(function(card){
-  card.addEventListener('pointermove',function(event){
-   const rect=card.getBoundingClientRect();
-   const x=(event.clientX-rect.left)/rect.width-.5;
-   const y=(event.clientY-rect.top)/rect.height-.5;
-   card.style.transform='perspective(1000px) rotateX('+(-y*1.3)+'deg) rotateY('+(x*1.5)+'deg)';
+const finePointer=window.matchMedia('(pointer:fine)').matches;
+if(finePointer&&!reduced){
+ document.querySelectorAll('.project-image').forEach(function(card){
+  card.addEventListener('pointermove',function(e){
+   const r=card.getBoundingClientRect();
+   const x=(e.clientX-r.left)/r.width;
+   const y=(e.clientY-r.top)/r.height;
+   card.style.transform='perspective(900px) rotateX('+((.5-y)*3)+'deg) rotateY('+((x-.5)*4)+'deg)';
   });
   card.addEventListener('pointerleave',function(){
-   card.style.transform='perspective(1000px) rotateX(0) rotateY(0)';
+   card.style.transform='perspective(900px) rotateX(0) rotateY(0)';
   });
  });
 }
